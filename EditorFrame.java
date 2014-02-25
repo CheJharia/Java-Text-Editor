@@ -1,3 +1,9 @@
+/**
+ * @author Afiq Johari
+ *
+ * This class defines a subclass of Frame.
+ * It serves as the main GUI of our text editor.
+ */
 
 import java.awt.BorderLayout;
 import java.awt.FileDialog;
@@ -6,7 +12,6 @@ import java.awt.Menu;
 import java.awt.MenuBar;
 import java.awt.MenuItem;
 import java.awt.MenuShortcut;
-import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -58,7 +63,8 @@ public class EditorFrame extends Frame implements ActionListener {
 
 	public static void main(String[] args) {
 		EditorFrame f = new EditorFrame();
-		f.setSize(600, 580);;
+		f.setSize(600, 580);
+		;
 		f.setVisible(true);
 	}
 
