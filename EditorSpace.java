@@ -1,4 +1,15 @@
-
+/**
+ * @author Afiq Johari
+ *
+ * This class defines a subclass of TextArea(java.awt.TextArea)
+ * and is used with EditorFrame.java
+ * 
+ * It contains the following methods:
+ * void copyFile(String inputFile, String outputFile);
+ * void readFile(String inputFile);
+ * void writeFile(String outputFile);
+ * void clear();
+ */
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.TextArea;
@@ -35,16 +46,30 @@ public class EditorSpace extends TextArea {
 
 	}
 
+	/**
+	 * Make a copy of inputFile to outputFile
+	 * 
+	 * @param inputFile
+	 * @param outputFile
+	 */
 	void copyFile(String inputFile, String outputFile) {
 		this.readFile(inputFile);
 		this.writeFile(outputFile);
-		
+
 	}
 
+	/**
+	 * clear TextArea content
+	 */
 	void clear() {
 		this.setText("");
 	}
 
+	/**
+	 * Write content from TextArea to outputFile
+	 * 
+	 * @param outputFile
+	 */
 	void writeFile(String outputFile) {
 
 		try {
@@ -62,6 +87,11 @@ public class EditorSpace extends TextArea {
 
 	}
 
+	/**
+	 * Read content from inputFile to TextArea
+	 * 
+	 * @param inputFile
+	 */
 	void readFile(String inputFile) {
 		BufferedReader br;
 		try {
