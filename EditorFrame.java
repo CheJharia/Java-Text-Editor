@@ -20,15 +20,24 @@ import java.awt.event.WindowEvent;
 
 public class EditorFrame extends Frame implements ActionListener {
 	MenuBar menuBar = new MenuBar();
+
 	Menu file = new Menu("File");
-	MenuItem open = new MenuItem("Open\tCtrl+O",
+	MenuItem open = new MenuItem("Open",
 			new MenuShortcut(KeyEvent.VK_O));
-	MenuItem save = new MenuItem("Save\tCtrl+S",
+	MenuItem save = new MenuItem("Save",
 			new MenuShortcut(KeyEvent.VK_S));
 	MenuItem save_as = new MenuItem("Save as");
 	MenuItem copy = new MenuItem("Copy");
-	MenuItem clearScreen = new MenuItem("Clear screen\tCtrl+L",
+	MenuItem clearScreen = new MenuItem("Clear screen",
 			new MenuShortcut(KeyEvent.VK_L));
+
+	Menu window = new Menu("Window");
+	
+	Menu background = new Menu("Background");
+	MenuItem monokai = new MenuItem("Monokai - Default");
+	MenuItem turquoise = new MenuItem("Turquoise");
+	MenuItem midnight_blue = new MenuItem("Midnight blue");
+	
 	EditorSpace editorSpace = new EditorSpace();
 
 	FileDialog openDialog = new FileDialog(this, "Open file", 0); // 0 for load
@@ -57,14 +66,21 @@ public class EditorFrame extends Frame implements ActionListener {
 		file.add(save_as);
 		file.add(copy);
 		file.add(clearScreen);
+		background.add(monokai);
+		background.add(turquoise);
+		background.add(midnight_blue);
+		turquoise.addActionListener(this);
+		midnight_blue.addActionListener(this);
+		monokai.addActionListener(this);
+		window.add(background);
 		menuBar.add(file);
+		menuBar.add(window);
 		setMenuBar(menuBar);
 	}
 
 	public static void main(String[] args) {
 		EditorFrame f = new EditorFrame();
 		f.setSize(600, 580);
-		;
 		f.setVisible(true);
 	}
 
@@ -104,6 +120,14 @@ public class EditorFrame extends Frame implements ActionListener {
 		if (e.getSource().equals(clearScreen)) {
 			this.editorSpace.clear();
 		}
-
+		if (e.getSource().equals(monokai)) {
+			this.editorSpace.changeColor(39, 40, 34);
+		}
+		if (e.getSource().equals(turquoise)) {
+			this.editorSpace.changeColor(26, 188, 156);
+		}
+		if (e.getSource().equals(midnight_blue)) {
+			this.editorSpace.changeColor(44, 62, 80);
+		}
 	}
 }
