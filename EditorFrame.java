@@ -22,22 +22,20 @@ public class EditorFrame extends Frame implements ActionListener {
 	MenuBar menuBar = new MenuBar();
 
 	Menu file = new Menu("File");
-	MenuItem open = new MenuItem("Open",
-			new MenuShortcut(KeyEvent.VK_O));
-	MenuItem save = new MenuItem("Save",
-			new MenuShortcut(KeyEvent.VK_S));
+	MenuItem open = new MenuItem("Open", new MenuShortcut(KeyEvent.VK_O));
+	MenuItem save = new MenuItem("Save", new MenuShortcut(KeyEvent.VK_S));
 	MenuItem save_as = new MenuItem("Save as");
 	MenuItem copy = new MenuItem("Copy");
-	MenuItem clearScreen = new MenuItem("Clear screen",
-			new MenuShortcut(KeyEvent.VK_L));
+	MenuItem clearScreen = new MenuItem("Clear screen", new MenuShortcut(
+			KeyEvent.VK_L));
 
 	Menu window = new Menu("Window");
-	
+
 	Menu background = new Menu("Background");
 	MenuItem monokai = new MenuItem("Monokai - Default");
 	MenuItem turquoise = new MenuItem("Turquoise");
 	MenuItem midnight_blue = new MenuItem("Midnight blue");
-	
+
 	EditorSpace editorSpace = new EditorSpace();
 
 	FileDialog openDialog = new FileDialog(this, "Open file", 0); // 0 for load
