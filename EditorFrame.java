@@ -27,8 +27,8 @@ public class EditorFrame extends Frame implements ActionListener {
 			new MenuShortcut(KeyEvent.VK_S));
 	MenuItem save_as = new MenuItem("Save as");
 	MenuItem copy = new MenuItem("Copy");
-	MenuItem clearScreen = new MenuItem("Clear screen\tCtrl+C",
-			new MenuShortcut(KeyEvent.VK_C));
+	MenuItem clearScreen = new MenuItem("Clear screen\tCtrl+L",
+			new MenuShortcut(KeyEvent.VK_L));
 	EditorSpace editorSpace = new EditorSpace();
 
 	FileDialog openDialog = new FileDialog(this, "Open file", 0); // 0 for load
