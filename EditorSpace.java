@@ -42,7 +42,15 @@ public class EditorSpace extends TextArea {
 		editorSpace.writeFile(outputFile);
 		editorSpace.copyFile(inputFile, outputFile);
 		editorSpace.clear();
+		// 26, 188, 156 is turquoise
+		editorSpace.changeColor(26, 188, 156);
 		f.setVisible(true);
+
+	}
+
+	void changeColor(int r, int g, int b) {
+
+		this.setBackground(new Color(r, g, b));
 
 	}
 
